@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #374151;
+    border-radius: 2px;
+  }
+}
+
+.typing-cursor::after {
+  content: '▋';
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.prose-dark p { margin: 0.5em 0; }
+.prose-dark ul { list-style: disc; padding-left: 1.5em; margin: 0.5em 0; }
+.prose-dark ol { list-style: decimal; padding-left: 1.5em; margin: 0.5em 0; }
+.prose-dark li { margin: 0.25em 0; }
+.prose-dark code { background: #1e293b; padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.875em; color: #a78bfa; }
+.prose-dark pre { background: #0f172a; padding: 1em; border-radius: 8px; overflow-x: auto; margin: 0.75em 0; }
+.prose-dark pre code { background: transparent; padding: 0; color: #e2e8f0; }
+.prose-dark h1, .prose-dark h2, .prose-dark h3 { font-weight: 600; margin: 0.75em 0 0.25em; color: #f1f5f9; }
+.prose-dark strong { color: #f1f5f9; font-weight: 600; }
+.prose-dark a { color: #60a5fa; text-decoration: underline; }
+.prose-dark blockquote { border-left: 3px solid #3b82f6; padding-left: 1em; color: #94a3b8; margin: 0.5em 0; }
